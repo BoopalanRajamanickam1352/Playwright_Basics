@@ -2,7 +2,7 @@
 //.fill will accept only string if any number we need to convert to string
 
 import { test, expect } from "@playwright/test"
-test("datatypes", async ({ page }) => {
+test("datatypes", async ({ page, browser }) => {
     await page.goto("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php")
     let name: string;
     let email: string;
@@ -26,5 +26,7 @@ test("datatypes", async ({ page }) => {
     await page.locator("#mobile").fill(mob_number.toString())
 
     await page.locator("#subjects").fill(subject ?? "")
+
+    browser.close()
 
 })
