@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test"
 
-test("variables", async ({ page }) => {
+test("variables", async ({ page, browser }) => {
     let url = "https://www.automationexercise.com/login";
     const usernameValue = "Test User"
     const emailValue = "testuser100@gmail.com"
@@ -17,5 +17,7 @@ test("variables", async ({ page }) => {
 
     const signup = page.locator('[data-qa="signup-button"]')
     await signup.click();
+
+    browser.close()
 
 })
